@@ -17,7 +17,7 @@ apt update && apt upgrade -y
 
 # Install APT packages
 echo -e "\n📥 Installing APT packages..."
-apt install -y curl wget git tlp terminator cherrytree syncthingtray wireshark remmina qbittorrent timeshift
+apt install -y curl wget tlp terminator cherrytree syncthingtray wireshark remmina qbittorrent timeshift lxappearance fonts-noto papirus-icon-theme pavucontrol
 
 # Enable & start TLP
 systemctl enable tlp
