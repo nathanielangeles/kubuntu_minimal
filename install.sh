@@ -1,9 +1,4 @@
-#!/usr/bin/env bash
-
-# A bash script that installs all the essential software for my work
-# OS: Ubuntu MATE 24.04.2 LTS
-# Author: nathanielangeles
-# Date: July 22, 2025
+#!/usr/bin/env
 
 # Check for root privileges
 if [[ $EUID -ne 0 ]]; then
@@ -17,11 +12,7 @@ apt update && apt upgrade -y
 
 # Install APT packages
 echo -e "\n[*] Installing APT packages..."
-apt install -y curl wget tlp terminator cherrytree syncthingtray wireshark remmina qbittorrent timeshift papirus-icon-theme flatpak
-
-# Enable & start TLP
-systemctl enable tlp
-systemctl start tlp
+apt install -y zsh curl wget terminator cherrytree syncthingtray wireshark remmina qbittorrent timeshift papirus-icon-theme flatpak
 
 # Install Flatpak and Flathub
 echo -e "\n[*] Adding Flathub repo..."
@@ -47,14 +38,14 @@ flatpak install -y --noninteractive flathub \
     com.spotify.Client \
     com.visualstudio.code \
     io.github.flattool.Warehouse \
-    
+
 # Install Tailscale
 echo -e "\n[*] Installing Tailscale..."
 curl -fsSL https://tailscale.com/install.sh | sh
 
 # Clone RedTeamify repo and run installer
-echo -e "\n🛠[*] Cloning and running RedTeamify..."
-mkdir -p ~/misc && cd ~/misc
+echo -e "\n[*] Cloning and running RedTeamify..."
+mkdir -p ~/Misc && cd ~/Misc
 git clone https://github.com/nathanielangeles/redteamify.git
 cd redteamify
 chmod +x RedTeamify.sh
