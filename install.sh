@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env bash
 
 # Check for root privileges
 if [[ $EUID -ne 0 ]]; then
@@ -42,13 +42,5 @@ flatpak install -y --noninteractive flathub \
 # Install Tailscale
 echo -e "\n[*] Installing Tailscale..."
 curl -fsSL https://tailscale.com/install.sh | sh
-
-# Clone RedTeamify repo and run installer
-echo -e "\n[*] Cloning and running RedTeamify..."
-mkdir -p ~/Misc && cd ~/Misc
-git clone https://github.com/nathanielangeles/redteamify.git
-cd redteamify
-chmod +x RedTeamify.sh
-./RedTeamify.sh
 
 echo -e "\n[+] All installations are complete. Please reboot to apply all changes.\n"
